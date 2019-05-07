@@ -53,6 +53,30 @@ bitbox console
 bitbox console --environment production
 ```
 
+Convert cash address to legacy address
+
+```js
+BITBOX.Address.toLegacyAddress(
+  "bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl"
+);
+// 1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN
+```
+
+Get details about address
+
+```js
+(async () => {
+  try {
+    let details = await BITBOX.Address.details([
+      "1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA"
+    ]);
+    console.log(details);
+  } catch (error) {
+    console.error(error);
+  }
+})();
+```
+
 ### Resources
 
 - [Semantic Versioning](https://semver.org/)
